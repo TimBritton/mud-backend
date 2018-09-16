@@ -1,0 +1,963 @@
+:dependencies
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+apiElements - API elements for main. (n)
+No dependencies
+
+archives - Configuration for archive artifacts.
+No dependencies
+
+compile - Dependencies for source set 'main' (deprecated, use 'implementation ' instead).
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
+\--- io.reactiverse:reactive-pg-client:0.10.3
+     \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+
+compileClasspath - Compile classpath for source set 'main'.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
+\--- io.reactiverse:reactive-pg-client:0.10.3
+     \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+
+compileOnly - Compile only dependencies for source set 'main'.
+No dependencies
+
+default - Configuration for default artifacts.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
+\--- io.reactiverse:reactive-pg-client:0.10.3
+     \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+
+implementation - Implementation only dependencies for source set 'main'. (n)
+No dependencies
+
+kapt
+No dependencies
+
+kaptTest
+No dependencies
+
+kotlinCompilerClasspath
+\--- org.jetbrains.kotlin:kotlin-compiler-embeddable:1.2.61
+     +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+     |    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+     |    \--- org.jetbrains:annotations:13.0
+     +--- org.jetbrains.kotlin:kotlin-script-runtime:1.2.61
+     \--- org.jetbrains.kotlin:kotlin-reflect:1.2.61
+          \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+
+kotlinCompilerPluginClasspath
+\--- org.jetbrains.kotlin:kotlin-scripting-compiler-embeddable:1.2.61
+
+runtime - Runtime dependencies for source set 'main' (deprecated, use 'runtimeOnly ' instead).
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
+\--- io.reactiverse:reactive-pg-client:0.10.3
+     \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+
+runtimeClasspath - Runtime classpath of source set 'main'.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
+\--- io.reactiverse:reactive-pg-client:0.10.3
+     \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+
+runtimeElements - Elements of runtime for main. (n)
+No dependencies
+
+runtimeOnly - Runtime only dependencies for source set 'main'. (n)
+No dependencies
+
+shadow
+No dependencies
+
+testCompile - Dependencies for source set 'test' (deprecated, use 'testImplementation ' instead).
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
++--- io.reactiverse:reactive-pg-client:0.10.3
+|    \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+\--- io.vertx:vertx-junit5:3.6.0-SNAPSHOT
+     +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java:3.6.0-SNAPSHOT
+     |    +--- io.vertx:vertx-rx-java-codegen:3.6.0-SNAPSHOT
+     |    |    +--- io.reactivex:rxjava:1.3.5
+     |    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT (*)
+     +--- org.junit.jupiter:junit-jupiter-api:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.platform:junit-platform-commons:1.1.0
+     |         \--- org.apiguardian:apiguardian-api:1.0.0
+     +--- org.junit.jupiter:junit-jupiter-params:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     +--- org.junit.jupiter:junit-jupiter-engine:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.junit.platform:junit-platform-engine:1.1.0
+     |    |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    |    +--- org.junit.platform:junit-platform-commons:1.1.0 (*)
+     |    |    \--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     \--- org.junit.platform:junit-platform-launcher:1.1.0
+          +--- org.apiguardian:apiguardian-api:1.0.0
+          \--- org.junit.platform:junit-platform-engine:1.1.0 (*)
+
+testCompileClasspath - Compile classpath for source set 'test'.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
++--- io.reactiverse:reactive-pg-client:0.10.3
+|    \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+\--- io.vertx:vertx-junit5:3.6.0-SNAPSHOT
+     +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java:3.6.0-SNAPSHOT
+     |    +--- io.vertx:vertx-rx-java-codegen:3.6.0-SNAPSHOT
+     |    |    +--- io.reactivex:rxjava:1.3.5
+     |    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT (*)
+     +--- org.junit.jupiter:junit-jupiter-api:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.platform:junit-platform-commons:1.1.0
+     |         \--- org.apiguardian:apiguardian-api:1.0.0
+     +--- org.junit.jupiter:junit-jupiter-params:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     +--- org.junit.jupiter:junit-jupiter-engine:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.junit.platform:junit-platform-engine:1.1.0
+     |    |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    |    +--- org.junit.platform:junit-platform-commons:1.1.0 (*)
+     |    |    \--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     \--- org.junit.platform:junit-platform-launcher:1.1.0
+          +--- org.apiguardian:apiguardian-api:1.0.0
+          \--- org.junit.platform:junit-platform-engine:1.1.0 (*)
+
+testCompileOnly - Compile only dependencies for source set 'test'.
+No dependencies
+
+testImplementation - Implementation only dependencies for source set 'test'. (n)
+No dependencies
+
+testRuntime - Runtime dependencies for source set 'test' (deprecated, use 'testRuntimeOnly ' instead).
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
++--- io.reactiverse:reactive-pg-client:0.10.3
+|    \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+\--- io.vertx:vertx-junit5:3.6.0-SNAPSHOT
+     +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java:3.6.0-SNAPSHOT
+     |    +--- io.vertx:vertx-rx-java-codegen:3.6.0-SNAPSHOT
+     |    |    +--- io.reactivex:rxjava:1.3.5
+     |    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT (*)
+     +--- org.junit.jupiter:junit-jupiter-api:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.platform:junit-platform-commons:1.1.0
+     |         \--- org.apiguardian:apiguardian-api:1.0.0
+     +--- org.junit.jupiter:junit-jupiter-params:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     +--- org.junit.jupiter:junit-jupiter-engine:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.junit.platform:junit-platform-engine:1.1.0
+     |    |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    |    +--- org.junit.platform:junit-platform-commons:1.1.0 (*)
+     |    |    \--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     \--- org.junit.platform:junit-platform-launcher:1.1.0
+          +--- org.apiguardian:apiguardian-api:1.0.0
+          \--- org.junit.platform:junit-platform-engine:1.1.0 (*)
+
+testRuntimeClasspath - Runtime classpath of source set 'test'.
++--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    \--- org.jetbrains:annotations:13.0
++--- org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    \--- org.jetbrains.kotlinx:kotlinx-coroutines-core-common:0.25.3
+|    |         +--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    |         \--- org.jetbrains.kotlinx:atomicfu-common:0.11.5
+|    |              \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.2.61
+|    +--- org.jetbrains.kotlinx:kotlinx-coroutines-reactive:0.25.3
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.61 (*)
+|    |    +--- org.jetbrains.kotlinx:kotlinx-coroutines-core:0.25.3 (*)
+|    |    \--- org.reactivestreams:reactive-streams:1.0.0 -> 1.0.2
+|    \--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2
+|         \--- org.reactivestreams:reactive-streams:1.0.2
++--- io.reactivex.rxjava2:rxjava:2.2.2 (*)
++--- io.vertx:vertx-core:3.6.0-SNAPSHOT
+|    +--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-buffer:4.1.27.Final
+|    |    \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-transport:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    \--- io.netty:netty-resolver:4.1.27.Final
+|    |         \--- io.netty:netty-common:4.1.27.Final
+|    +--- io.netty:netty-handler:4.1.27.Final
+|    |    +--- io.netty:netty-buffer:4.1.27.Final (*)
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec:4.1.27.Final
+|    |         \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- io.netty:netty-handler-proxy:4.1.27.Final
+|    |    +--- io.netty:netty-transport:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-socks:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-codec-http:4.1.27.Final
+|    |         \--- io.netty:netty-codec:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    +--- io.netty:netty-codec-http2:4.1.27.Final
+|    |    +--- io.netty:netty-codec-http:4.1.27.Final (*)
+|    |    \--- io.netty:netty-handler:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    +--- io.netty:netty-resolver-dns:4.1.27.Final
+|    |    +--- io.netty:netty-resolver:4.1.27.Final (*)
+|    |    +--- io.netty:netty-codec-dns:4.1.27.Final
+|    |    |    \--- io.netty:netty-codec:4.1.27.Final (*)
+|    |    \--- io.netty:netty-transport:4.1.27.Final (*)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.9.6
+|    \--- com.fasterxml.jackson.core:jackson-databind:2.9.6
+|         +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|         \--- com.fasterxml.jackson.core:jackson-core:2.9.6
++--- io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.41
+|    |    +--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.41
+|    |         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.41 -> 1.2.61 (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-web:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-web-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-bridge-common:3.6.0-SNAPSHOT
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-rx-java2-codegen:3.6.0-SNAPSHOT
+|    |    +--- io.reactivex.rxjava2:rxjava:2.1.9 -> 2.2.2 (*)
+|    |    +--- org.reactivestreams:reactive-streams:1.0.2
+|    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT
+|    +--- io.vertx:vertx-auth-common:3.6.0-SNAPSHOT (*)
+|    +--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT
+|    |    +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+|    |    \--- org.mongodb:mongodb-driver-async:3.6.3
+|    |         +--- org.mongodb:bson:3.6.3
+|    |         \--- org.mongodb:mongodb-driver-core:3.6.3
+|    |              \--- org.mongodb:bson:3.6.3
+|    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
++--- io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT (*)
++--- com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+ -> 2.9.6
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.9.6 (*)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.9.0
+|    \--- org.jetbrains.kotlin:kotlin-reflect:1.2.21
+|         \--- org.jetbrains.kotlin:kotlin-stdlib:1.2.21 -> 1.2.61 (*)
++--- io.reactiverse:reactive-pg-client:0.10.3
+|    \--- io.vertx:vertx-core:3.5.3 -> 3.6.0-SNAPSHOT (*)
+\--- io.vertx:vertx-junit5:3.6.0-SNAPSHOT
+     +--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java:3.6.0-SNAPSHOT
+     |    +--- io.vertx:vertx-rx-java-codegen:3.6.0-SNAPSHOT
+     |    |    +--- io.reactivex:rxjava:1.3.5
+     |    |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     |    \--- io.vertx:vertx-core:3.6.0-SNAPSHOT (*)
+     +--- io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT (*)
+     +--- org.junit.jupiter:junit-jupiter-api:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.platform:junit-platform-commons:1.1.0
+     |         \--- org.apiguardian:apiguardian-api:1.0.0
+     +--- org.junit.jupiter:junit-jupiter-params:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     +--- org.junit.jupiter:junit-jupiter-engine:5.1.0
+     |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    +--- org.junit.platform:junit-platform-engine:1.1.0
+     |    |    +--- org.apiguardian:apiguardian-api:1.0.0
+     |    |    +--- org.junit.platform:junit-platform-commons:1.1.0 (*)
+     |    |    \--- org.opentest4j:opentest4j:1.0.0
+     |    \--- org.junit.jupiter:junit-jupiter-api:5.1.0 (*)
+     \--- org.junit.platform:junit-platform-launcher:1.1.0
+          +--- org.apiguardian:apiguardian-api:1.0.0
+          \--- org.junit.platform:junit-platform-engine:1.1.0 (*)
+
+testRuntimeOnly - Runtime only dependencies for source set 'test'. (n)
+No dependencies
+
+(*) - dependencies omitted (listed previously)
+
+BUILD SUCCESSFUL in 0s
+1 actionable task: 1 executed
