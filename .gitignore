@@ -1,0 +1,9 @@
+.idea/
+.gradle/
+
+webroot/
+webroot2/
+build/
+out/
+.vertx/
+!/gradle/wrapper/gradle-wrapper.jar
