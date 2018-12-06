@@ -14,14 +14,15 @@ import io.vertx.ext.web.Router
 import io.vertx.ext.web.handler.StaticHandler
 import io.vertx.ext.web.handler.sockjs.BridgeOptions
 import io.vertx.ext.web.handler.sockjs.SockJSHandler
+import io.vertx.kotlin.coroutines.CoroutineVerticle
 import me.britton.mud.http.Routes
 
 
-class Server : AbstractVerticle()
+class Server : CoroutineVerticle()
 {
 
-    override fun start(startFuture: Future<Void>?) {
-        super.start(startFuture)
+      override suspend fun start() {
+        super.start()
         Json.mapper.registerModule(KotlinModule())
         val router = Router.router(vertx)
         val subrouter = Routes(vertx, context)
@@ -34,7 +35,7 @@ class Server : AbstractVerticle()
         router.route().handler(StaticHandler.create().setWebRoot("./webroot").setIndexPage("public/index.html"))
         router.route("/game/*").handler(sockJSHandler)
         router.mountSubRouter("/api", subrouter.getRouter())
-        vertx.createHttpServer().requestHandler({ router.accept(it) }).listen(8080)
+        vertx.createHttpServer().requestHandler(router).listen(8080)
 
         // Publish a message to the address "news-feed" every second
         vertx.setPeriodic(1000) { t -> vertx.eventBus().send("some-address", "news from the server!\n") }
@@ -43,6 +44,7 @@ class Server : AbstractVerticle()
             print(it.body() + "\n")
 
         }
+
 
         //okay so when the user connects with the client they need to be told where to listen and where to write their responses
 

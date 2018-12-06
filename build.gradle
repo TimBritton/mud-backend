@@ -2,7 +2,8 @@ buildscript {
 
 
 
-    ext.kotlin_version = '1.2.61'
+    ext.kotlin_version = '1.3.10'
+//    ext.vertx_version = '3.6.0.CR2'
 
     repositories {
         mavenCentral()
@@ -21,21 +22,21 @@ plugins {
 }
 
 apply plugin: 'kotlin'
-
+def vertx_version = '3.6.0.CR2'
+def kotlin_version = '1.3.10'
 dependencies {
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compile "org.jetbrains.kotlinx:kotlinx-coroutines-rx2:0.25.3"
     compile "io.reactivex.rxjava2:rxjava:2.2.2"
-    compile "io.vertx:vertx-core:3.6.0-SNAPSHOT"
-    compile "io.vertx:vertx-lang-kotlin:3.6.0-SNAPSHOT"
-    compile 'io.vertx:vertx-web:3.6.0-SNAPSHOT'
-    compile 'io.vertx:vertx-rx-java2:3.6.0-SNAPSHOT'
-    compile 'io.vertx:vertx-auth-mongo:3.6.0-SNAPSHOT'
-    compile 'io.vertx:vertx-mongo-client:3.6.0-SNAPSHOT'
+    compile "io.vertx:vertx-core:$vertx_version"
+    compile "io.vertx:vertx-lang-kotlin:$vertx_version"
+    compile "io.vertx:vertx-lang-kotlin-coroutines:$vertx_version"
+    compile "io.vertx:vertx-web:$vertx_version"
+    compile "io.vertx:vertx-rx-java2:$vertx_version"
+    compile "io.vertx:vertx-auth-mongo:$vertx_version"
+    compile "io.vertx:vertx-mongo-client:$vertx_version"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.+"
-//    compile 'io.reactiverse:reactive-pg-client:0.10.3'
-    testCompile 'io.vertx:vertx-junit5:3.6.0-SNAPSHOT'
+//    compile "io.reactiverse:reactive-pg-client:0.10.3"
+    testCompile "io.vertx:vertx-junit5:$vertx_version"
 }
 repositories {
     mavenCentral()
